@@ -2401,6 +2401,11 @@ countup.js@^2.5.0:
   resolved "https://registry.npmjs.org/countup.js/-/countup.js-2.7.0.tgz"
   integrity sha512-IP9nYLGgW//0If73eXQdFlReGhpFGHaStqB1v82FknxnUWueF6HFuuOXySW4sEDMc88PsZL1EOn/NPkfTZalmQ==
 
+cql-prettier@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/cql-prettier/-/cql-prettier-0.0.1.tgz#2f8731afa799268a28912672cab8c80a7c3f208b"
+  integrity sha512-tX2OMpn00OF6YFjp7rDX5VH/0sL3h/Tj2ACf0OMifVZrmtI0C+bWkdRksXRXMlVHhe00mvJy3iedYV8KyHuVGQ==
+
 cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"

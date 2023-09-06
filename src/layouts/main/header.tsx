@@ -62,23 +62,14 @@ export default function Header({ headerOnDark }: Props) {
         }}
       >
         <Container
-          sx={{
-            height: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
+          sx={{ height: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
         >
           <Box sx={{ lineHeight: 0, position: 'relative' }}>
             <Logo />
 
-            <Link
-              href='https://zone-docs.vercel.app/changelog'
-              target='_blank'
-              rel='noopener'
-            >
+            <Link href="https://zone-docs.vercel.app/changelog" target="_blank" rel="noopener">
               <Label
-                color='info'
+                color="info"
                 sx={{
                   ml: 0.5,
                   px: 0.5,
@@ -97,13 +88,8 @@ export default function Header({ headerOnDark }: Props) {
 
           {mdUp && <NavDesktop data={navConfig} />}
 
-          <Stack
-            spacing={2}
-            direction='row'
-            alignItems='center'
-            justifyContent='flex-end'
-          >
-            <Stack spacing={1} direction='row' alignItems='center'>
+          <Stack spacing={2} direction="row" alignItems="center" justifyContent="flex-end">
+            <Stack spacing={1} direction="row" alignItems="center">
               <Searchbar />
 
               <SettingsButton />
@@ -111,11 +97,11 @@ export default function Header({ headerOnDark }: Props) {
 
             {mdUp && (
               <Button
-                variant='contained'
-                color='inherit'
+                variant="contained"
+                color="inherit"
                 href={paths.zoneStore}
-                target='_blank'
-                rel='noopener'
+                target="_blank"
+                rel="noopener"
               >
                 Buy Now
               </Button>

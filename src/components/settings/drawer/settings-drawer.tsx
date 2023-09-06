@@ -23,38 +23,35 @@ export default function SettingsDrawer() {
 
   const renderHead = (
     <Stack
-      direction='row'
-      alignItems='center'
-      justifyContent='space-between'
+      direction="row"
+      alignItems="center"
+      justifyContent="space-between"
       sx={{ py: 2, pr: 1, pl: 2.5 }}
     >
-      <Typography variant='h6' sx={{ flexGrow: 1 }}>
+      <Typography variant="h6" sx={{ flexGrow: 1 }}>
         Settings
       </Typography>
 
-      <Tooltip title='Reset'>
+      <Tooltip title="Reset">
         <IconButton onClick={settings.onReset}>
-          <Badge color='error' variant='dot' invisible={!settings.canReset}>
-            <Iconify icon='solar:restart-bold' />
+          <Badge color="error" variant="dot" invisible={!settings.canReset}>
+            <Iconify icon="solar:restart-bold" />
           </Badge>
         </IconButton>
       </Tooltip>
 
       <IconButton onClick={settings.onClose}>
-        <Iconify icon='mingcute:close-line' />
+        <Iconify icon="mingcute:close-line" />
       </IconButton>
     </Stack>
   );
 
   const renderMode = (
     <BaseOptions
-      title='Mode'
+      title="Mode"
       selected={settings.themeMode === 'dark'}
       onClick={() =>
-        settings.onUpdate(
-          'themeMode',
-          settings.themeMode === 'dark' ? 'light' : 'dark',
-        )
+        settings.onUpdate('themeMode', settings.themeMode === 'dark' ? 'light' : 'dark')
       }
       icons={['carbon:asleep', 'carbon:asleep-filled']}
     />
@@ -62,13 +59,10 @@ export default function SettingsDrawer() {
 
   const renderDirection = (
     <BaseOptions
-      title='Direction'
+      title="Direction"
       selected={settings.themeDirection === 'rtl'}
       onClick={() =>
-        settings.onUpdate(
-          'themeDirection',
-          settings.themeDirection === 'rtl' ? 'ltr' : 'rtl',
-        )
+        settings.onUpdate('themeDirection', settings.themeDirection === 'rtl' ? 'ltr' : 'rtl')
       }
       icons={['carbon:align-horizontal-right', 'carbon:align-horizontal-left']}
     />
@@ -78,10 +72,7 @@ export default function SettingsDrawer() {
     <PresetsOptions
       value={settings.themeColorPresets}
       onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-        settings.onUpdate(
-          'themeColorPresets',
-          (event.target as HTMLInputElement).value,
-        )
+        settings.onUpdate('themeColorPresets', (event.target as HTMLInputElement).value)
       }
     />
   );
@@ -89,7 +80,7 @@ export default function SettingsDrawer() {
   return (
     <Drawer
       open={settings.open}
-      anchor='right'
+      anchor="right"
       PaperProps={{
         sx: {
           width: 280,

@@ -10,9 +10,10 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <MainLayout>
-      {/* <HomeView /> */}
+    // <MainLayout>
+    <>
       <ElearningLandingView />
-    </MainLayout>
+    </>
+    // </MainLayout>
   );
 }

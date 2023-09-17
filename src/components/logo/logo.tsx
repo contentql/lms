@@ -1,10 +1,11 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import Link from '@mui/material/Link';
-import { useTheme } from '@mui/material/styles';
-import Box, { BoxProps } from '@mui/material/Box';
+import Link from "@mui/material/Link";
+import { useTheme } from "@mui/material/styles";
+import Box, { BoxProps } from "@mui/material/Box";
 
-import { RouterLink } from 'src/routes/components';
+import { RouterLink } from "src/routes/components";
+import Image from "next/image";
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +26,13 @@ function Logo({ single = false, sx }: LogoProps) {
       fill="none"
       viewBox="0 0 512 512"
     >
-      <ellipse cx="405.143" cy="338.571" fill={PRIMARY_MAIN} rx="82.857" ry="82.857" />
+      <ellipse
+        cx="405.143"
+        cy="338.571"
+        fill={PRIMARY_MAIN}
+        rx="82.857"
+        ry="82.857"
+      />
       <path
         fill="currentColor"
         d="M114.742 355.332H256v66.097H24v-61.376l140.323-203.956H24V90h232v61.376L114.742 355.332z"
@@ -59,14 +66,20 @@ function Logo({ single = false, sx }: LogoProps) {
     >
       <Box
         sx={{
-          width: single ? 64 : 75,
+          width: single ? 84 : 95,
           lineHeight: 0,
-          cursor: 'pointer',
-          display: 'inline-flex',
+          cursor: "pointer",
+          display: "inline-flex",
           ...sx,
         }}
       >
-        {single ? singleLogo : fullLogo}
+        <Image
+          src="./assets/logo/ryzolve.svg"
+          height={100}
+          width={100}
+          alt="ryzolve-logo"
+        />
+        {/* {single ? singleLogo : fullLogo} */}
       </Box>
     </Link>
   );

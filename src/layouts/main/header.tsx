@@ -103,21 +103,34 @@ export default function Header({ headerOnDark }: Props) {
             alignItems="center"
             justifyContent="flex-end"
           >
-            <Stack spacing={1} direction="row" alignItems="center">
+            {/* <Stack spacing={1} direction="row" alignItems="center">
               <Searchbar />
 
               <SettingsButton />
-            </Stack>
+            </Stack> */}
 
             {mdUp && (
               <Button
                 variant="contained"
-                color="inherit"
+                color="success"
                 href={paths.zoneStore}
                 target="_blank"
                 rel="noopener"
               >
-                Buy Now
+                Signin
+              </Button>
+            )}
+            {mdUp && (
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#6E00FF",
+                }}
+                href={paths.zoneStore}
+                target="_blank"
+                rel="noopener"
+              >
+                Register
               </Button>
             )}
           </Stack>

@@ -1,28 +1,29 @@
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Link from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
+import Avatar from "@mui/material/Avatar";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
 
-import Label from 'src/components/label';
-import { paths } from 'src/routes/paths';
-import Image from 'src/components/image';
-import Iconify from 'src/components/iconify';
-import { ICourseProps } from 'src/types/course';
-import { RouterLink } from 'src/routes/components';
-import TextMaxLine from 'src/components/text-max-line';
-import { fCurrency, fShortenNumber } from 'src/utils/format-number';
+import Label from "src/components/label";
+import { paths } from "src/routes/paths";
+import Image from "src/components/image";
+import Iconify from "src/components/iconify";
+import { ICourseProps } from "src/types/course";
+import { RouterLink } from "src/routes/components";
+import TextMaxLine from "src/components/text-max-line";
+import { fCurrency, fShortenNumber } from "src/utils/format-number";
 
 // ----------------------------------------------------------------------
 
 type Props = {
   course: ICourseProps;
   vertical?: boolean;
+  id: string;
 };
 
-export default function ElearningCourseItem({ course, vertical }: Props) {
+export default function ElearningCourseItem({ course, vertical, id }: Props) {
   const {
     slug,
     level,
@@ -42,12 +43,12 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
   return (
     <Card
       sx={{
-        display: { sm: 'flex' },
-        '&:hover': {
+        display: { sm: "flex" },
+        "&:hover": {
           boxShadow: (theme) => theme.customShadows.z24,
         },
         ...(vertical && {
-          flexDirection: 'column',
+          flexDirection: "column",
         }),
       }}
     >
@@ -57,7 +58,7 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
           src={coverUrl}
           sx={{
             height: 1,
-            objectFit: 'cover',
+            objectFit: "cover",
             width: { sm: 240 },
             ...(vertical && {
               width: { sm: 1 },
@@ -73,8 +74,8 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
           sx={{
             top: 12,
             left: 12,
-            position: 'absolute',
-            textTransform: 'uppercase',
+            position: "absolute",
+            textTransform: "uppercase",
           }}
         >
           Best Seller
@@ -88,8 +89,12 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
             sm: vertical ? 3 : 1,
           }}
         >
-          <Stack direction="row" alignItems="center" justifyContent="space-between">
-            <Typography variant="overline" sx={{ color: 'primary.main' }}>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <Typography variant="overline" sx={{ color: "primary.main" }}>
               {category}
             </Typography>
 
@@ -99,8 +104,8 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
                   component="span"
                   sx={{
                     mr: 0.5,
-                    color: 'text.disabled',
-                    textDecoration: 'line-through',
+                    color: "text.disabled",
+                    textDecoration: "line-through",
                   }}
                 >
                   {fCurrency(priceSale)}
@@ -111,7 +116,12 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
           </Stack>
 
           <Stack spacing={1}>
-            <Link component={RouterLink} href={paths.eLearning.course} color="inherit">
+            <Link
+              component={RouterLink}
+              // href={paths.eLearning.course}
+              href={`/course/${id}`}
+              color="inherit"
+            >
               <TextMaxLine variant="h6" line={1}>
                 {slug}
               </TextMaxLine>
@@ -122,7 +132,7 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
               color="text.secondary"
               sx={{
                 ...(vertical && {
-                  display: { sm: 'none' },
+                  display: { sm: "none" },
                 }),
               }}
             >
@@ -136,22 +146,26 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
           direction="row"
           alignItems="center"
           flexWrap="wrap"
-          divider={<Divider orientation="vertical" sx={{ height: 20, my: 'auto' }} />}
+          divider={
+            <Divider orientation="vertical" sx={{ height: 20, my: "auto" }} />
+          }
         >
           <Stack spacing={0.5} direction="row" alignItems="center">
-            <Iconify icon="carbon:star-filled" sx={{ color: 'warning.main' }} />
-            <Box sx={{ typography: 'h6' }}>
-              {Number.isInteger(ratingNumber) ? `${ratingNumber}.0` : ratingNumber}
+            <Iconify icon="carbon:star-filled" sx={{ color: "warning.main" }} />
+            <Box sx={{ typography: "h6" }}>
+              {Number.isInteger(ratingNumber)
+                ? `${ratingNumber}.0`
+                : ratingNumber}
             </Box>
 
             {totalReviews && (
-              <Link variant="body2" sx={{ color: 'text.secondary' }}>
+              <Link variant="body2" sx={{ color: "text.secondary" }}>
                 ({fShortenNumber(totalReviews)} totalReviews)
               </Link>
             )}
           </Stack>
 
-          <Stack direction="row" sx={{ typography: 'subtitle2' }}>
+          <Stack direction="row" sx={{ typography: "subtitle2" }}>
             {fShortenNumber(totalStudents)}
             <Box component="span" typography="body2" sx={{ ml: 0.5 }}>
               students
@@ -175,10 +189,10 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
 
         <Divider
           sx={{
-            borderStyle: 'dashed',
-            display: { sm: 'none' },
+            borderStyle: "dashed",
+            display: { sm: "none" },
             ...(vertical && {
-              display: 'block',
+              display: "block",
             }),
           }}
         />
@@ -187,18 +201,28 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
           direction="row"
           flexWrap="wrap"
           alignItems="center"
-          sx={{ color: 'text.disabled', '& > *:not(:last-child)': { mr: 2.5 } }}
+          sx={{ color: "text.disabled", "& > *:not(:last-child)": { mr: 2.5 } }}
         >
-          <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
-            <Iconify icon="carbon:time" sx={{ mr: 1 }} /> {`${totalHours} hours`}
+          <Stack
+            direction="row"
+            alignItems="center"
+            sx={{ typography: "body2" }}
+          >
+            <Iconify icon="carbon:time" sx={{ mr: 1 }} />{" "}
+            {`${totalHours} hours`}
           </Stack>
 
-          <Stack direction="row" alignItems="center" sx={{ typography: 'body2' }}>
+          <Stack
+            direction="row"
+            alignItems="center"
+            sx={{ typography: "body2" }}
+          >
             <Iconify
               icon={
-                (level === 'Beginner' && 'carbon:skill-level-basic') ||
-                (level === 'Intermediate' && 'carbon:skill-level-intermediate') ||
-                'carbon:skill-level-advanced'
+                (level === "Beginner" && "carbon:skill-level-basic") ||
+                (level === "Intermediate" &&
+                  "carbon:skill-level-intermediate") ||
+                "carbon:skill-level-advanced"
               }
               sx={{ mr: 1 }}
             />

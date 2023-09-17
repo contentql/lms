@@ -1,14 +1,14 @@
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Container from '@mui/material/Container';
-import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Container from "@mui/material/Container";
+import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
-import { ICourseProps } from 'src/types/course';
-import { useResponsive } from 'src/hooks/use-responsive';
-import Carousel, { useCarousel, CarouselArrows } from 'src/components/carousel';
+import { ICourseProps } from "src/types/course";
+import { useResponsive } from "src/hooks/use-responsive";
+import Carousel, { useCarousel, CarouselArrows } from "src/components/carousel";
 
-import ElearningCourseItem from '../list/elearning-course-item';
+import ElearningCourseItem from "../list/elearning-course-item";
 
 // ----------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ export default function ElearningLandingFeaturedCourses({ courses }: Props) {
     ],
   });
 
-  const mdUp = useResponsive('up', 'md');
+  const mdUp = useResponsive("up", "md");
 
   return (
     <Container
@@ -43,27 +43,34 @@ export default function ElearningLandingFeaturedCourses({ courses }: Props) {
       }}
     >
       <Stack
-        direction={{ xs: 'column', md: 'row' }}
-        alignItems={{ md: 'flex-end' }}
+        direction={{ xs: "column", md: "row" }}
+        alignItems={{ md: "flex-end" }}
         sx={{
-          textAlign: { xs: 'center', md: 'unset' },
+          textAlign: { xs: "center", md: "unset" },
         }}
       >
         <Stack spacing={3} flexGrow={1}>
           <Typography variant="h2">Featured Courses</Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
-            Nullam accumsan lorem in dui. Praesent ac massa at ligula laoreet iaculis.
+          <Typography sx={{ color: "text.secondary" }}>
+            Nullam accumsan lorem in dui. Praesent ac massa at ligula laoreet
+            iaculis.
           </Typography>
         </Stack>
 
-        {mdUp && <CarouselArrows spacing={2} onNext={carousel.onNext} onPrev={carousel.onPrev} />}
+        {mdUp && (
+          <CarouselArrows
+            spacing={2}
+            onNext={carousel.onNext}
+            onPrev={carousel.onPrev}
+          />
+        )}
       </Stack>
 
       <Box
         sx={{
-          position: 'relative',
+          position: "relative",
           ml: { md: -2 },
-          width: { md: 'calc(100% + 32px)' },
+          width: { md: "calc(100% + 32px)" },
         }}
       >
         <CarouselArrows
@@ -73,20 +80,20 @@ export default function ElearningLandingFeaturedCourses({ courses }: Props) {
             sx: {
               left: -16,
               opacity: 1,
-              color: 'common.white',
-              bgcolor: 'primary.main',
-              '&:hover': { bgcolor: 'primary.dark' },
-              ...(mdUp && { display: 'none' }),
+              color: "common.white",
+              bgcolor: "primary.main",
+              "&:hover": { bgcolor: "primary.dark" },
+              ...(mdUp && { display: "none" }),
             },
           }}
           rightButtonProps={{
             sx: {
               right: -16,
               opacity: 1,
-              color: 'common.white',
-              bgcolor: 'primary.main',
-              '&:hover': { bgcolor: 'primary.dark' },
-              ...(mdUp && { display: 'none' }),
+              color: "common.white",
+              bgcolor: "primary.main",
+              "&:hover": { bgcolor: "primary.dark" },
+              ...(mdUp && { display: "none" }),
             },
           }}
         >
@@ -100,7 +107,7 @@ export default function ElearningLandingFeaturedCourses({ courses }: Props) {
                   pb: { xs: 10, md: 15 },
                 }}
               >
-                <ElearningCourseItem course={course} vertical />
+                <ElearningCourseItem course={course} id={course.id} vertical />
               </Box>
             ))}
           </Carousel>

@@ -48,8 +48,6 @@ export default function ElearningCourseView() {
     return <SplashScreen />;
   }
 
-  console.log("render next route");
-
   return (
     <>
       <ElearningCourseDetailsHero course={_mockCourse} />

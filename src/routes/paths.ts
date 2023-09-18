@@ -37,7 +37,7 @@ export const paths = {
   // E-learning
   eLearning: {
     root: "/e-learning",
-    courses: "/e-learning/courses",
+    courses: "/courses",
     course: `/course`,
     posts: "/e-learning/posts",
     post: `/e-learning/post`,
@@ -67,11 +67,14 @@ export const paths = {
   loginCover: "/auth/login-cover",
   loginBackground: "/auth/login-background",
   loginIllustration: "/auth/login-illustration",
+  login: "/auth/login",
   registerCover: "/auth/register-cover",
   registerBackground: "/auth/register-background",
   registerIllustration: "/auth/register-illustration",
   forgotPassword: "/auth/forgot-password",
   verify: "/auth/verify",
+  register: "/auth/register",
+
   // Common
   maintenance: "/maintenance",
   comingsoon: "/coming-soon",

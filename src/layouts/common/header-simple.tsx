@@ -1,24 +1,28 @@
-import Link from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import { useTheme } from '@mui/material/styles';
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import { useTheme } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 
-import { bgBlur } from 'src/theme/css';
-import Logo from 'src/components/logo';
-import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
-import { useOffSetTop } from 'src/hooks/use-off-set-top';
+import { bgBlur } from "src/theme/css";
+import Logo from "src/components/logo";
+import { paths } from "src/routes/paths";
+import { RouterLink } from "src/routes/components";
+import { useOffSetTop } from "src/hooks/use-off-set-top";
 
-import { HEADER } from '../config-layout';
+import { HEADER } from "../config-layout";
 
-import HeaderShadow from './header-shadow';
-import SettingsButton from './settings-button';
+import HeaderShadow from "./header-shadow";
+import SettingsButton from "./settings-button";
+import { useRouter } from "src/routes/hooks";
+import Iconify from "src/components/iconify";
 
 // ----------------------------------------------------------------------
 
 export default function HeaderSimple() {
   const theme = useTheme();
+  const router = useRouter();
 
   const offsetTop = useOffSetTop(HEADER.H_DESKTOP);
 
@@ -26,12 +30,12 @@ export default function HeaderSimple() {
     <AppBar>
       <Toolbar
         sx={{
-          justifyContent: 'space-between',
+          justifyContent: "space-between",
           height: {
             xs: HEADER.H_MOBILE,
             md: HEADER.H_DESKTOP,
           },
-          transition: theme.transitions.create(['height'], {
+          transition: theme.transitions.create(["height"], {
             easing: theme.transitions.easing.easeInOut,
             duration: theme.transitions.duration.shorter,
           }),
@@ -48,16 +52,13 @@ export default function HeaderSimple() {
         <Logo />
 
         <Stack direction="row" alignItems="center" spacing={1}>
-          <SettingsButton />
-
-          <Link
-            href={paths.support}
-            component={RouterLink}
-            color="inherit"
-            sx={{ typography: 'subtitle2' }}
+          <Button
+            variant="outlined"
+            startIcon={<Iconify icon="carbon:chevron-left" />}
+            onClick={() => router.back()}
           >
-            Need help?
-          </Link>
+            Previous Page
+          </Button>
         </Stack>
       </Toolbar>
 

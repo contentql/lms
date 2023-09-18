@@ -1,26 +1,19 @@
-'use client';
+"use client";
 
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 
-import { usePathname } from 'src/routes/hooks';
+import { usePathname } from "src/routes/hooks";
 
-import { HEADER } from '../config-layout';
+import { HEADER } from "../config-layout";
 
-import Header from './header';
-import Footer from './footer';
+import Header from "./header";
+import Footer from "./footer";
 
 // ----------------------------------------------------------------------
 
-const pathsOnDark = ['/career', '/career/', '/travel', '/travel/'];
+const pathsOnDark = ["/career", "/career/", "/travel", "/travel/"];
 
-const spacingLayout = [
-  ...pathsOnDark,
-  '/',
-  '/e-learning',
-  '/e-learning/',
-  '/marketing',
-  '/marketing/',
-];
+const spacingLayout = [...pathsOnDark, "/", "/e-learning", "/e-learning/"];
 
 type Props = {
   children: React.ReactNode;
@@ -32,7 +25,7 @@ export default function MainLayout({ children }: Props) {
   const actionPage = (arr: string[]) => arr.some((path) => pathname === path);
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', height: 1 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", height: 1 }}>
       <Header headerOnDark={actionPage(pathsOnDark)} />
 
       <Box

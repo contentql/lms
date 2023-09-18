@@ -22,6 +22,7 @@ import SettingsButton from "../common/settings-button";
 import NavMobile from "./nav/mobile";
 import NavDesktop from "./nav/desktop";
 import { navConfig } from "./config-navigation";
+import RouterLink from "src/routes/components/router-link";
 
 // ----------------------------------------------------------------------
 
@@ -103,35 +104,12 @@ export default function Header({ headerOnDark }: Props) {
             alignItems="center"
             justifyContent="flex-end"
           >
-            {/* <Stack spacing={1} direction="row" alignItems="center">
-              <Searchbar />
-
-              <SettingsButton />
-            </Stack> */}
-
             {mdUp && (
-              <Button
-                variant="contained"
-                color="success"
-                href={paths.zoneStore}
-                target="_blank"
-                rel="noopener"
-              >
-                Signin
-              </Button>
-            )}
-            {mdUp && (
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "#6E00FF",
-                }}
-                href={paths.zoneStore}
-                target="_blank"
-                rel="noopener"
-              >
-                Register
-              </Button>
+              <Link component={RouterLink} href={paths.login}>
+                <Button variant="contained" color="inherit">
+                  Login
+                </Button>
+              </Link>
             )}
           </Stack>
 

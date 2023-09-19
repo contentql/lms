@@ -52,7 +52,7 @@ export default function ElearningCourseView() {
     <>
       <ElearningCourseDetailsHero course={_mockCourse} />
 
-      <Container
+      {/*<Container
         sx={{
           overflow: "hidden",
           pt: { xs: 5, md: 10 },
@@ -121,11 +121,11 @@ export default function ElearningCourseView() {
             </Stack>
           </Grid>
         </Grid>
-      </Container>
+              </Container>
 
       {mdUp && <Divider />}
 
-      <ReviewElearning />
+      <ReviewElearning />*/}
 
       <ElearningCourseListSimilar courses={courseSimilar} />
 

@@ -1,5 +1,6 @@
 import Stack from '@mui/material/Stack';
 import Dialog from '@mui/material/Dialog';
+import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -40,7 +41,7 @@ export default function ElearningCourseDetailsLessonsDialog({
       alignItems="center"
       justifyContent="center"
       sx={{
-        width: 1,
+        width: { xs: 1, md: 0.7 },
         height: 1,
       }}
     >
@@ -72,13 +73,31 @@ export default function ElearningCourseDetailsLessonsDialog({
     </Stack>
   );
 
+  const renderDescription = (
+    <Stack
+      spacing={1}
+      sx={{
+        p: { xs: 3, md: 8 },
+        pt: { xs: 6 },
+        width: { xs: 1, md: 0.7 },
+        height: 1,
+        typography: 'body2',
+        color: 'text.primary',
+      }}
+    >
+      <Typography variant="h1" component="h2">
+        {selectedLesson?.description}
+      </Typography>
+    </Stack>
+  );
+
   const renderList = (
     <Stack
       spacing={0.5}
       sx={{
         p: 1,
         overflowY: 'scroll',
-        width: { xs: 1, md: 0.5 },
+        width: { xs: 1, md: 0.3 },
         height: 1,
       }}
     >
@@ -154,7 +173,7 @@ export default function ElearningCourseDetailsLessonsDialog({
       </IconButton>
 
       <Stack direction={{ xs: 'column', md: 'row' }} sx={{ height: 1 }}>
-        {renderVideo}
+        {renderDescription}
 
         {renderList}
       </Stack>

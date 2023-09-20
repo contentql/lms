@@ -34,6 +34,11 @@ export default function ElearningCourseDetailsLessonItem({
         [`&.${accordionClasses.expanded}`]: {
           borderRadius: 0,
         },
+        "&:hover": {
+          ".lessonTitle": {
+            textDecorationLine: "underline"
+          }
+        }
       }}
     >
       <AccordionSummary
@@ -57,10 +62,12 @@ export default function ElearningCourseDetailsLessonItem({
 
         <Typography
           variant="subtitle1"
+          className='lessonTitle'
           sx={{
             pl: 2,
             flexGrow: 1,
           }}
+          onClick={onSelected}
         >
           {lesson.title}
         </Typography>

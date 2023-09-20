@@ -1,3 +1,4 @@
+import MainLayout from "src/layouts/main";
 import ElearningCourseView from 'src/sections/_elearning/view/elearning-course-view';
 
 // ----------------------------------------------------------------------
@@ -7,5 +8,9 @@ export const metadata = {
 };
 
 export default function ElearningCoursePage() {
-  return <ElearningCourseView />;
+  return (
+    <MainLayout>
+      <ElearningCourseView />
+    </MainLayout>
+  );;
 }

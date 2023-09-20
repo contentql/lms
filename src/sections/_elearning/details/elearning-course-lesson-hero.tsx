@@ -126,35 +126,15 @@ export default function ElearningCourseDetailsHero({ course }: Props) {
                     ))}
                   </Stack>
                 </Stack>
-
-                <Divider sx={{ my: 5 }} />
-
-                <ElearningCourseDetailsTeachersInfo
-                  teachers={course.teachers}
-                />
               </Grid>
 
               <Grid xs={12} md={5} lg={4}>
                 <Stack spacing={5}>
                   {mdUp && <ElearningCourseDetailsInfo course={course} />}
-
-                  <Advertisement
-                    advertisement={{
-                      title: "Advertisement",
-                      description:
-                        "Duis leo. Donec orci lectus, aliquam ut, faucibus non",
-                      imageUrl: _mock.image.course(7),
-                      path: "",
-                    }}
-                  />
                 </Stack>
               </Grid>
             </Grid>
           </Container>
-
-          {mdUp && <Divider />}
-
-          <ReviewElearning />
         </Container>
       </Box>
 

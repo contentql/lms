@@ -1,12 +1,12 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from "react";
 
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 
-import { useBoolean } from 'src/hooks/use-boolean';
-import { ICourseLessonProp } from 'src/types/course';
+import { useBoolean } from "src/hooks/use-boolean";
+import { ICourseLessonProp } from "src/types/course";
 
-import ElearningCourseDetailsLessonItem from './elearning-course-details-lesson-item';
-import ElearningCourseDetailsLessonsDialog from './elearning-course-details-lessons-dialog';
+import ElearningCourseDetailsLessonItem from "./elearning-course-details-lesson-item";
+import ElearningCourseDetailsLessonsDialog from "./elearning-course-details-lessons-dialog";
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,8 @@ export default function ElearningCourseDetailsLessonList({ lessons }: Props) {
 
   const [expanded, setExpanded] = useState<string | false>(false);
 
-  const [selectedLesson, setSelectedLesson] = useState<ICourseLessonProp | null>(null);
+  const [selectedLesson, setSelectedLesson] =
+    useState<ICourseLessonProp | null>(null);
 
   const handleReady = useCallback(() => {
     setTimeout(() => videoPlay.onTrue(), 500);

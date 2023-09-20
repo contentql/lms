@@ -125,7 +125,7 @@ export default function ElearningCourseView() {
 
       {mdUp && <Divider />}
 
-      <ReviewElearning />*/}
+              <ReviewElearning />*/}
 
       <ElearningCourseListSimilar courses={courseSimilar} />
 

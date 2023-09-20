@@ -2,6 +2,7 @@ import Fab from '@mui/material/Fab';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -150,6 +151,12 @@ export default function ElearningCourseDetailsHero({ course }: Props) {
                     <Box component="span" typography="body2" sx={{ ml: 0.5 }}>
                       students
                     </Box>
+                  </Stack>
+
+                  <Stack>
+                    <Button href={course.id} variant="contained" color="primary">
+                      Start Now
+                    </Button>
                   </Stack>
                 </Stack>
 

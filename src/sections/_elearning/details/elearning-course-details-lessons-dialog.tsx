@@ -40,8 +40,8 @@ export default function ElearningCourseDetailsLessonsDialog({
       alignItems="center"
       justifyContent="center"
       sx={{
-        width: { xs: 1, md: 0.5 },
-        height: { xs: 320, md: 640 },
+        width: 1,
+        height: 1,
       }}
     >
       {selectedLesson?.videoPath ? (
@@ -79,7 +79,7 @@ export default function ElearningCourseDetailsLessonsDialog({
         p: 1,
         overflowY: 'scroll',
         width: { xs: 1, md: 0.5 },
-        height: { xs: 320, md: 640 },
+        height: 1,
       }}
     >
       {lessons?.map((lesson) => {
@@ -140,6 +140,12 @@ export default function ElearningCourseDetailsLessonsDialog({
       PaperProps={{
         sx: {
           overflow: 'hidden',
+          m: 0,
+          width: 1,
+          height: 1,
+          maxWidth: 1,
+          maxHeight: 1,
+          borderRadius: 0
         },
       }}
     >

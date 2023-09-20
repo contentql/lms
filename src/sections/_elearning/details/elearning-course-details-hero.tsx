@@ -157,7 +157,7 @@ export default function ElearningCourseDetailsHero({ course }: Props) {
                   </Stack>
 
                   <Stack sx={!mdUp && ({ width: 1 })}>
-                    <Button href={`lessons/${id}`} variant="contained" color="primary">
+                    <Button href={`/lesson/${id}`} variant="contained" color="primary">
                       Start Now
                     </Button>
                   </Stack>

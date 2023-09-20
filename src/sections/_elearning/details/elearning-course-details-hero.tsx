@@ -30,6 +30,7 @@ type Props = {
 
 export default function ElearningCourseDetailsHero({ course }: Props) {
   const {
+    id,
     slug,
     level,
     lessons,
@@ -128,7 +129,9 @@ export default function ElearningCourseDetailsHero({ course }: Props) {
                 </Stack>
 
                 <Stack
-                  spacing={1.5}
+                  spacing={{ xs: 1, sm: 2 }}
+                  useFlexGap 
+                  flexWrap="wrap"
                   direction="row"
                   alignItems="center"
                   divider={<Divider orientation="vertical" sx={{ height: 20 }} />}
@@ -153,8 +156,8 @@ export default function ElearningCourseDetailsHero({ course }: Props) {
                     </Box>
                   </Stack>
 
-                  <Stack>
-                    <Button href={course.id} variant="contained" color="primary">
+                  <Stack sx={!mdUp && ({ width: 1 })}>
+                    <Button href={`lessons/${id}`} variant="contained" color="primary">
                       Start Now
                     </Button>
                   </Stack>
